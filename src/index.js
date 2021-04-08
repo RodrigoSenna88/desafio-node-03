@@ -32,7 +32,7 @@ app.post("/repositories", (request, response) => {
 
 app.put("/repositories/:id", (request, response) => {
   const { id } = request.params;
-  const updatedRepository = request.body;
+  const {title, url, techs} = request.body;
 
      
 
@@ -46,7 +46,7 @@ app.put("/repositories/:id", (request, response) => {
  
 
 
-  const repository = { ...repositories[repositoryIndex], ...updatedRepository };
+  const repository = { ...repositories[repositoryIndex], title, url, techs };
 
   repositories[repositoryIndex] = repository;
 
